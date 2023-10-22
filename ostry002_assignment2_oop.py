@@ -27,19 +27,24 @@ class Reagent:
         self.__potency = potency 
 
 class SuperPotion(Potion):
-    def __init__(self, herb, catalyst):
+    def __init__(self, name, stat, boost, herb, catalyst):
+        super().__init__(name, stat, boost)
         self.__herb = herb
         self.__catalyst = catalyst 
 
 class ExtremePotion(Potion):
-    def __init__(self, reagent, potion):
+    def __init__(self, name, stat, boost, reagent, potion):
+        super().__init__(name, stat, boost)
         self.__reagent = reagent 
         self.__potion = potion 
 
 class Herb(Reagent):
-    def __init__(self, grimy):
+    def __init__(self, name, potency, grimy):
+        super().__init__(name, potency)
         self.__grimy = grimy 
 
 class Catalyst(Reagent):
-    def __init__(self, quality):
+    def __init__(self, name, potency, quality):
+        super().__init__(name, potency)
         self.__quality = quality
+
