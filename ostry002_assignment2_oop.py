@@ -14,4 +14,6 @@ class Laboratory:
         self.__potions = potions 
         self.__herbs = herbs 
         self.__catalysts = catalysts
+
+class Potion: 
         
