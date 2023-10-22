@@ -16,4 +16,30 @@ class Laboratory:
         self.__catalysts = catalysts
 
 class Potion: 
-        
+    def __init__(self, name, stat, boost):
+        self.__name = name
+        self.__stat = stat 
+        self.__boost = boost
+
+class Reagent:
+    def __init__(self, name, potency):
+        self.__name = name
+        self.__potency = potency 
+
+class SuperPotion(Potion):
+    def __init__(self, herb, catalyst):
+        self.__herb = herb
+        self.__catalyst = catalyst 
+
+class ExtremePotion(Potion):
+    def __init__(self, reagent, potion):
+        self.__reagent = reagent 
+        self.__potion = potion 
+
+class Herb(Reagent):
+    def __init__(self, grimy):
+        self.__grimy = grimy 
+
+class Catalyst(Reagent):
+    def __init__(self, quality):
+        self.__quality = quality
