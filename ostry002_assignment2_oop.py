@@ -9,6 +9,14 @@ class Alchemist:
         self.__laboratory = laboratory
         self.__recipes = recipes 
 
+    def collectReagent(self, reagent, amount):
+        self.__laboratory.addReagent(reagent, amount)
+
+    def mixPotion(self, recipe):
+        self.__laboratory.mixPotion(recipe, self)
+
+    
+
 class Laboratory: 
     def __init__(self, potions, herbs, catalysts):
         self.__potions = potions 
