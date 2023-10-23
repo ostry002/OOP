@@ -17,13 +17,24 @@ class Alchemist:
         self.__ranged = ranged 
         self.__necromancy = necromancy
         self.__laboratory = laboratory
-        self.__recipes = recipes 
+        self.__recipes = []
+    
+    def getLaboratory():
+        return Laboratory
+
+    def getReceipes(self):
+        return self.__recipes
+    
+    def mixPotion(self, recipe):
+        self.__laboratory.mixPotion(recipe, self)
+
+    def drinkPotion(self, potion):
+        pass
 
     def collectReagent(self, reagent, amount):
         self.__laboratory.addReagent(reagent, amount)
 
-    def mixPotion(self, recipe):
-        self.__laboratory.mixPotion(recipe, self)
+    
 
     
 
