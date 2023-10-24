@@ -33,8 +33,9 @@ class Alchemist:
 
     def collectReagent(self, reagent, amount):
         self.__laboratory.addReagent(reagent, amount)
-
     
+    def refineReagents(self):
+        pass
 
     
 
@@ -44,16 +45,49 @@ class Laboratory:
         self.__herbs = herbs 
         self.__catalysts = catalysts
 
+    def mixPotion(self, name, type, stat, primaryIngredient, secondaryIngredient):
+        pass
+
+    def addReagent(self, reagent, amount):
+        pass
+
 class Potion: 
     def __init__(self, name, stat, boost):
         self.__name = name
         self.__stat = stat 
         self.__boost = boost
+    
+    def calculateBoost(self):
+        pass
+
+    def getName(self):
+        return self.__name
+    
+    def getStat(self):
+        return self.__stat
+    
+    def getBoost(self):
+        return self.__boost
+    
+    def setBoost(self):
+        pass
 
 class Reagent:
     def __init__(self, name, potency):
         self.__name = name
         self.__potency = potency 
+    
+    def refine(self):
+        pass
+
+    def getName(self):
+        return self.__name
+    
+    def getPotency(self):
+        return self.__potency 
+    
+    def setPotency(self):
+        pass 
 
 class SuperPotion(Potion):
     def __init__(self, name, stat, boost, herb, catalyst):
