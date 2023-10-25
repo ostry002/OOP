@@ -94,6 +94,15 @@ class SuperPotion(Potion):
         super().__init__(name, stat, boost)
         self.__herb = herb
         self.__catalyst = catalyst 
+    
+    def calculateBoost(self):
+        return super().calculateBoost()
+    
+    def getHerb(self):
+        return self.__herb 
+    
+    def getCatalyst(self):
+        return self.__catalyst 
 
 class ExtremePotion(Potion):
     def __init__(self, name, stat, boost, reagent, potion):
@@ -101,14 +110,38 @@ class ExtremePotion(Potion):
         self.__reagent = reagent 
         self.__potion = potion 
 
+    def calculateBoost(self):
+        return super().calculateBoost()
+    
+    def getReagent(Reagent):
+        return Reagent
+    
+    def getPotion(Potion):
+        return Potion
+
 class Herb(Reagent):
     def __init__(self, name, potency, grimy):
         super().__init__(name, potency)
         self.__grimy = grimy 
 
+    def refine(self):
+        return super().refine()
+
+    def getGrimy(self):
+        return self.__grimy 
+    
+    def setGrimy(self):
+        pass
+
 class Catalyst(Reagent):
     def __init__(self, name, potency, quality):
         super().__init__(name, potency)
         self.__quality = quality
+
+    def refine(self):
+        return super().refine()
+    
+    def getQuality(self):
+        return self.__quality 
 
 
