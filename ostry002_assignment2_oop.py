@@ -26,13 +26,25 @@ class Alchemist:
         return self.__recipes
     
     def mixPotion(self, recipe):
-        self.__laboratory.mixPotion(recipe, self)
+        """
+        Making an object in which I am
+        calling the Laboratory class 
+        with proper arguments.
+        composition 
+        """
+        self.objLaboratory = Laboratory(recipe, self)      
 
     def drinkPotion(self, potion):
         pass
 
     def collectReagent(self, reagent, amount):
-        self.__laboratory.addReagent(reagent, amount)
+        """
+        Making an object in which I am
+        calling the Laboratory class 
+        with proper arguments.
+        composition 
+        """
+        self.objLaboratory = Laboratory(reagent, amount)  
     
     def refineReagents(self):
         pass
