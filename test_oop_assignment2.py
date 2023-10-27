@@ -7,10 +7,10 @@ EmailID: ostry002
 This is my own work as defined by the University's Academic Misconduct Policy.
 '''
 
-import unittest
+import pytest
 
 
-class Alchemist(unittest.TestCase):
+class Alchemist(pytest.TestCase):
     def __init__(self, attack, strength, defense, magic, ranged, necromancy, laboratory, recipes):
         self.__attack = attack
         self.__strength = strength
@@ -22,8 +22,8 @@ class Alchemist(unittest.TestCase):
         self.__recipes = []
     
     def testGetLaboratory():
-        return Laboratory
-        testGetLaboratory.assertRaises(Laboratory)
+        with pytest.raises(TypeError):
+            Laboratory(True)
         
 
     def testGetReceipes(self):
