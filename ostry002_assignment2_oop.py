@@ -6,9 +6,47 @@ StudentID: 110410137
 EmailID: ostry002
 This is my own work as defined by the University's Academic Misconduct Policy.
 '''
-
-
 class Alchemist:
+    """
+    A class representing an Alchemist
+
+    Attributes
+    ----------
+    attack: int
+
+    strength: int
+
+    magic: int
+
+    ranged: int
+
+    necromancy: int
+
+    laboratory: Laboratory
+
+    recipes: {}
+
+    Methods
+    -------
+    getLaboratory(self): Laboratory
+      Return the Laboratory instance associated with the Alchemist.
+
+    getRecipes(self): List
+      Returns a list of available potion recipes.
+
+    mixPotion(self, recipe: str):
+      Mixes a potion based on the recipe using the laboratory's functionality.
+
+    drinkPotion(self, potion: Potion) -> str:
+      Alchemist can drink a potion, increasing their attribute according to the potion's functionality.
+
+    collectReagent(self, reagent: Reagent, amount: int):
+      Adds a reagent to the alchemist's laboratory.
+
+    refineReagents(self):
+      Refines all herbs and catalysts in the laboratory, augmenting their quality and potency. 
+
+    """
     def __init__(self, attack, strength, defense, magic, ranged, necromancy, laboratory, recipes):
         self.__attack = attack
         self.__strength = strength
@@ -38,26 +76,33 @@ class Alchemist:
         pass
 
     def collectReagent(self, reagent, amount):
-        """
-        Making an object in which I am
-        calling the Laboratory class 
-        with proper arguments.
-        composition 
-        """
+        """Making an object in which I am calling the Laboratory class with proper arguments - Composition."""
         self.objLaboratory = Laboratory(reagent, amount)  
     
     def refineReagents(self):
         pass
 
-    
-
 class Laboratory: 
+    """
+    A class representing a laboratory
+
+    Attributes
+    ----------
+    attack: int
+    strength: int
+    magic: int
+    ranged: int
+    necromancy: int
+    laboratory: Laboratory
+    recipes: {}
+    """
     def __init__(self, potions, herbs, catalysts):
         self.__potions = potions 
         self.__herbs = herbs 
         self.__catalysts = catalysts
-
+    
     def mixPotion(self, name, type, stat, primaryIngredient, secondaryIngredient):
+        """Creating a method in which I am mixing the first and second ingredients of a potion together."""
         pass
 
     def addReagent(self, reagent, amount):
