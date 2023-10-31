@@ -64,12 +64,7 @@ class Alchemist:
         return self.__recipes
     
     def mixPotion(self, recipe):
-        """
-        Making an object in which I am
-        calling the Laboratory class 
-        with proper arguments.
-        composition 
-        """
+        """Making an object in which I am calling the Laboratory class with proper arguments - Composition."""
         self.objLaboratory = Laboratory(recipe, self)      
 
     def drinkPotion(self, potion):
@@ -88,14 +83,21 @@ class Laboratory:
 
     Attributes
     ----------
-    attack: int
-    strength: int
-    magic: int
-    ranged: int
-    necromancy: int
-    laboratory: Laboratory
-    recipes: {}
+    potions: []
+
+    herbs: []
+
+    catalysts: []
+
+    Methods
+    -------
+    mixPotion(self, name: str, type: str, stat: str, primaryIngredient: str, secondaryIngredient: str)
+        Mixes a potion based on the specified ingredients and their attributes. 
+
+    addReagent(self, reagent: Reagent, amount: int):
+        Adds a reagent (herb or catalyst) to the laboratory with the specified amount.
     """
+
     def __init__(self, potions, herbs, catalysts):
         self.__potions = potions 
         self.__herbs = herbs 
@@ -109,6 +111,34 @@ class Laboratory:
         pass
 
 class Potion: 
+     """
+    A class representing the potion
+
+    Attributes
+    ----------
+    name: str
+
+    stat: str
+
+    boost: float
+
+    Methods
+    -------
+    calculateBoost(self):
+        Calculates and returns the attribute boost that the potion provides.
+
+    getName(self):
+        Acquires the name of the potion.
+
+    getStat(self):
+        Acquires the stat (attribute) that the potion affects.
+
+    getBoost(self):
+        Acquires the boost value of the potion.
+
+    setBoost(self, boost: float):
+        Sets the boost value of the potion to a value.
+    """
     def __init__(self, name, stat, boost):
         self.__name = name
         self.__stat = stat 
