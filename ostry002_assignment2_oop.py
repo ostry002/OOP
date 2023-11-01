@@ -111,7 +111,7 @@ class Laboratory:
         pass
 
 class Potion: 
-     """
+    """
     A class representing the potion
 
     Attributes
