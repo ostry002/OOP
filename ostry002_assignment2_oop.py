@@ -160,6 +160,29 @@ class Potion:
         pass
 
 class Reagent:
+    """
+    A class representing the reagent 
+
+    Attributes
+    ----------
+    name: str
+
+    potency: float
+
+    Methods
+    -------
+    refine(self):
+        Refines the reagent depending on the type used.
+
+    getName(self):
+        Returns the name of the reagent.
+
+    getPotency(self):
+        Returns the potency value of the reagent.
+
+    setPotency(self, potency):
+        Sets the potency value of the reagent to a value. 
+    """
     def __init__(self, name, potency):
         self.__name = name
         self.__potency = potency 
@@ -177,6 +200,26 @@ class Reagent:
         pass 
 
 class SuperPotion(Potion):
+    """
+    A class representing the super potion which inherits from the Potion class.
+
+    Attributes
+    ----------
+    herb: Herb
+
+    catalyst: Catalyst
+
+    Methods
+    -------
+    calculateBoost(self):
+      Calculates and returns the attribute boost of the super potion.
+    
+    getHerb(self):
+      Returns the name of the herb.
+
+    getCatalyst(self):
+       Returns the name of the catalyst.
+    """
     def __init__(self, name, stat, boost, herb, catalyst):
         super().__init__(name, stat, boost)
         self.__herb = herb
@@ -192,6 +235,26 @@ class SuperPotion(Potion):
         return self.__catalyst 
 
 class ExtremePotion(Potion):
+    """
+    A class representing the extreme potion, which inherits from the Potion class.
+
+    Attributes
+    ----------
+    reagent: Reagent
+
+    potion: Potion
+
+    Methods
+    -------
+    calculateBoost(self):
+      Calculates and returns the attribute boost of the extreme potion.
+    
+    getReagent(self):
+      Returns the name of the reagent.
+
+    getPotion(self):
+       Returns the name of the potion.
+    """
     def __init__(self, name, stat, boost, reagent, potion):
         super().__init__(name, stat, boost)
         self.__reagent = reagent 
@@ -207,6 +270,24 @@ class ExtremePotion(Potion):
         return Potion
 
 class Herb(Reagent):
+    """
+    A class representing the herb, which inherits from the Reagent class.
+
+    Attributes
+    ----------
+    grimy (bool) = True
+
+    Methods
+    -------
+    refine(self):
+      Refines the herb.
+
+    setGrimy(self, grimy):
+      Sets the grimy of the herb to a value.
+
+    getGrimy(self):
+      Returns whether the herb is grimy (True) or not (False).
+    """
     def __init__(self, name, potency, grimy):
         super().__init__(name, potency)
         self.__grimy = grimy 
@@ -221,6 +302,21 @@ class Herb(Reagent):
         pass
 
 class Catalyst(Reagent):
+    """
+    A class representing the catalyst, which inherits from the Reagent class.
+
+    Attributes
+    ----------
+    quality: float
+
+    Methods
+    -------
+    refine(self):
+      Refines the catalyst.
+
+    getQuality(self):
+      Returns the quality of the catalyst. 
+    """
     def __init__(self, name, potency, quality):
         super().__init__(name, potency)
         self.__quality = quality
