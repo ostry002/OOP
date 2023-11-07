@@ -68,6 +68,7 @@ class Alchemist:
         self.objLaboratory = Laboratory(recipe, self)      
 
     def drinkPotion(self, potion):
+        """Type of potion to drink and increasing character attributes.""" 
         pass
 
     def collectReagent(self, reagent, amount):
@@ -75,6 +76,7 @@ class Alchemist:
         self.objLaboratory = Laboratory(reagent, amount)  
     
     def refineReagents(self):
+        """Refining reagents.""" 
         pass
 
 class Laboratory: 
@@ -105,10 +107,11 @@ class Laboratory:
     
     def mixPotion(self, name, type, stat, primaryIngredient, secondaryIngredient):
         """Creating a method in which I am mixing the first and second ingredients of a potion together."""
-        pass
+        self.__objAlchemist = Alchemist(name, type, stat, primaryIngredient, secondaryIngredient)
 
     def addReagent(self, reagent, amount):
-        pass
+        """Creating a method in which I am utilsiing composition to attain the reagent and the amount."""
+        add = Alchemist(reagent, amount)
 
 class Potion: 
     """
@@ -145,6 +148,7 @@ class Potion:
         self.__boost = boost
     
     def calculateBoost(self):
+        """Parent class of the calculate boost method that is being passed."""
         pass
 
     def getName(self):
@@ -157,7 +161,7 @@ class Potion:
         return self.__boost
     
     def setBoost(self):
-        pass
+        self.__boost = self.__boost
 
 class Reagent:
     """
@@ -188,6 +192,7 @@ class Reagent:
         self.__potency = potency 
     
     def refine(self):
+        """Creating a method for the parent call of refine which passes to the child class."""
         pass
 
     def getName(self):
@@ -226,7 +231,8 @@ class SuperPotion(Potion):
         self.__catalyst = catalyst 
     
     def calculateBoost(self):
-        return super().calculateBoost()
+        """Creating a method in which I am calculating the boost of a super potion."""
+        pass
     
     def getHerb(self):
         return self.__herb 
@@ -261,6 +267,7 @@ class ExtremePotion(Potion):
         self.__potion = potion 
 
     def calculateBoost(self):
+        """Creating a method in which I am calculating the boost of a super potion."""
         return super().calculateBoost()
     
     def getReagent(Reagent):
@@ -293,6 +300,7 @@ class Herb(Reagent):
         self.__grimy = grimy 
 
     def refine(self):
+        """Creating a method in which I am refining the potency of the herb."""
         return super().refine()
 
     def getGrimy(self):
@@ -322,6 +330,7 @@ class Catalyst(Reagent):
         self.__quality = quality
 
     def refine(self):
+        """Creating a method in which I am refining the potency of the catalyst."""
         return super().refine()
     
     def getQuality(self):
